@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Translate</title>
+    <style type="text/css">
+      body {
+        min-width: 35%;
+		min-height: 400px;
+        overflow-x: hidden;
+      }
+	  
+	  .bottom {
+		text-align: left;
+		position: fixed;
+		bottom: 0px;
+	  }
+	  
+	  h2 {
+		font-size: 2.0em;
+	  }
+	  
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    <script type="text/javascript" src="popup.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+  </head>
+  <body>
+  <h2> Text to translate </h2>
+  <textarea id="toTranslate" rows="6" cols="50"></textarea>
+	
+  <table> 	
+	<tr>
+		<td> From </td>
+		<td>
+			<form action="">
+				<select id="fromLanguage">
+					<option value="english" selected>English</option>
+					<!--
+					<option value="french">French</option>
+					<option value="chinese">Chinese</option>
+					<option value="spanish">Spanish</option>
+					-->
+				</select>
+			</form>
+		</td>
+
+  
+		<td> to </td>
+  
+		<td>
+			<form action="">
+				<select id="toLanguage">
+					<option value="english">English</option>
+					<option value="french">French</option>
+					<option value="chinese" selected>Chinese</option>
+					<option value="spanish">Spanish</option>
+				</select>
+			</form>
+		</td>
+	</tr>
+  </table>	
+  
+  <button type="button" id="translate" align="middle">Translate!</button> 
+	
+  
+  <h2> Translated text </h2>
+  <div id="translatedText"></div>
+  <p></p>
+  <div class="bottom"><font size=1>Extension uses MyMemory Translation API</font></div>
+  </body>
+</html>
